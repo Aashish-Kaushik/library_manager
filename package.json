@@ -1,0 +1,31 @@
+{
+  "name": "books-manager",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "Aashish Kaushik",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AashishKaushik29/book-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AashishKaushik29/book-manager/issues"
+  },
+  "homepage": "https://github.com/AashishKaushik29/book-manager#readme",
+  "description": ""
+}
