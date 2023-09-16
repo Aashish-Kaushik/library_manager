@@ -1,0 +1,40 @@
+openapi: 3.0.0
+"info":
+  title: LIBRARY MANAGER APIs
+  description: Create a book manager app which stores Books and Users data in the DB and create apis to perform crud operation on both of them.
+  version: 0.1.9
+
+paths:
+  /book/create:
+    post:
+      tags:
+        - Book
+      summary: Create Book in DataBase.
+      operationId: createBook
+      parameters:
+        - name: name
+          type: string
+          in: body
+          required: true
+          description: Book name
+        - name: page
+          type: number
+          in: body
+          required: true
+          description: number of pages in Book
+        - name: price
+          type: number
+          in: body
+          required: true
+          description: Price of book
+        - name: authorId
+          type: string
+          in: body
+          required: true
+          description: Author of Book
+
+      responses:
+        "200": # status code
+          description: Book created Successfully
+        "400":
+          description: missing parameters
