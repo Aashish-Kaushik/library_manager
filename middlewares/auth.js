@@ -17,4 +17,13 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
-module.exports = verifyToken;
+
+const checkRole = (role) => {
+  return (req, res, next) => {
+    if (req.user.role !== role) {
+      return res.status(401).send("not Allowed")
+    }
+    next()
+  }
+}
+module.exports = { checkRole, verifyToken } 
