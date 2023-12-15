@@ -1,6 +1,6 @@
 const express = require("express");
 const userController = require("../controllers/user.controller");
-const auth = require("../middlewares/auth");
+const { verifyToken } = require("../middlewares/auth.js");
 
 const router = express.Router();
 
@@ -10,9 +10,9 @@ router.post("/login", userController.login);
 
 router.get("/profile/:id", userController.findone);
 
-router.delete("/delete/:id", auth, userController.delete);
+router.delete("/delete/:id", verifyToken(), userController.delete);
 
-router.delete("/delete", auth, userController.deleteAll);
+router.delete("/delete", verifyToken(), userController.deleteAll);
 
 router.put("/forgot", userController.forgot);
 
